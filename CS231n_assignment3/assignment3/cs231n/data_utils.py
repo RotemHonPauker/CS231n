@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 from builtins import range
+from numpy.core.numeric import True_
 from six.moves import cPickle as pickle
 import numpy as np
 import os
@@ -252,7 +253,17 @@ def load_imagenet_val(num=None):
       print('cd cs231n/datasets')
       print('bash get_imagenet_val.sh')
       assert False, 'Need to download imagenet_val_25.npz'
+    
+    # save np.load
+    np_load_old = np.load
+    
+    # modify the default parameters of np.load
+    np.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
+
+    # restore np.load for future normal usage
     f = np.load(imagenet_fn)
+    np.load = np_load_old
+
     X = f['X']
     y = f['y']
     class_names = f['label_map'].item()
