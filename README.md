@@ -3,7 +3,7 @@
 ***
 This repository contains my solutions to the assignments of the CS231n course offered by Stanford University on [Spring 2017](http://cs231n.stanford.edu/2017/syllabus.html).
 
-My solutions is based on [Burton2000's solution](https://github.com/Burton2000/CS231n-2017).
+My solutions are based on [Burton2000's solution](https://github.com/Burton2000/CS231n-2017).
 
 ## Assignment 1:
     
